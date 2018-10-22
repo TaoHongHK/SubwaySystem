@@ -3,10 +3,12 @@ package com.homework;
 public class Station {
     private int number;
     private String name;
+    private double disToNext;
 
-    public Station(int number,String name){
+    public Station(int number,String name,double disToNext){
         this.number = number;
         this.name = name;
+        this.disToNext = disToNext;
     }
 
     public int getNumber(){
