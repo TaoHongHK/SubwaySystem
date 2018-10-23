@@ -2,9 +2,9 @@ package com.homework;
 
 import java.util.ArrayList;
 
-/*public class EdgeWeightedDigraph {
+public class EdgeWeightedDigraph {
     private final int V;                       //顶点总数
-    private final int E;                       //边的总数
+    private int E;                             //边的总数
     private ArrayList<DirectedEdge>[] adj;     //邻接表
 
     public EdgeWeightedDigraph(int V){
@@ -16,7 +16,6 @@ import java.util.ArrayList;
         }
     }
 
-    public EdgeWeightedDigraph(){
 
-    }
-}*/
+
+}

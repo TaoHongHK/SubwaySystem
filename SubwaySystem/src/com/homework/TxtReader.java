@@ -12,8 +12,7 @@ public class TxtReader {
             "(\\W+)---(\\W+)\t([0-9]*\\.[0-9]+)";
     private static final String PATTERN_STRING_LINE =
             "(([0-9]\\W*站点)|(阳逻线站点))间距站点名称\t间距（KM）";
-    private static int number = 0;
-    private static String[] LINES_string;
+    private static int count = 0;
     private static final ArrayList<ArrayList<Station>> LINES  = new ArrayList<>();
 
     public static void read(){
@@ -21,6 +20,7 @@ public class TxtReader {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String tmp = null;
+            String[] LINES_string;
             StringBuffer sb = new StringBuffer();
             while((tmp=bufferedReader.readLine())!=null){
                 sb.append(tmp);
@@ -51,16 +51,16 @@ public class TxtReader {
                 name2 = matcher.group(2);
                 distance = Double.parseDouble(matcher.group(3));
                 stationNames.add(name1);
-                oneLine.add(new Station(++number,name1,distance));
+                oneLine.add(new Station(++count,name1,distance));
 
             }
-            oneLine.add(new Station(++number,name2,0));
+            oneLine.add(new Station(++count,name2,0));
             LINES.add(oneLine);
         }
     }
 
-    public static void main(String[] args) {
-        read();
+    public static ArrayList<ArrayList<Station>> getLINES(){
+        return LINES;
     }
 
 }

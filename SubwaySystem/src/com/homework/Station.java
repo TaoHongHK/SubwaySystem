@@ -17,4 +17,7 @@ public class Station {
     public String getName(){
         return name;
     }
+    public double getDisToNext(){
+        return disToNext;
+    }
 }
