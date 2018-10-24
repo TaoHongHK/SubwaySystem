@@ -1,4 +1,4 @@
-package com.homework;
+package com.subwaysystem;
 
 public class Station {
     private int number;
@@ -13,6 +13,9 @@ public class Station {
 
     public int getNumber(){
         return number;
+    }
+    public void setNumber(int number){
+        this.number = number;
     }
     public String getName(){
         return name;

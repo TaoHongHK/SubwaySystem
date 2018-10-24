@@ -1,4 +1,4 @@
-package com.homework;
+package com.subwaysystem;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -7,12 +7,12 @@ import java.util.regex.Pattern;
 
 public class TxtReader {
     private static final String FILE_PATH =
-            ".\\src\\com\\homework\\subway.txt";
+            ".\\src\\com\\assets\\subway.txt";
     private static final String PATTERN_STRING_STATION =
             "(\\W+)---(\\W+)\t([0-9]*\\.[0-9]+)";
     private static final String PATTERN_STRING_LINE =
             "(([0-9]\\W*站点)|(阳逻线站点))间距站点名称\t间距（KM）";
-    private static int count = 0;
+    private static ArrayList<Station> allStations = new ArrayList<>();
     private static final ArrayList<ArrayList<Station>> LINES  = new ArrayList<>();
 
     public static void read(){
@@ -30,6 +30,7 @@ public class TxtReader {
             for (String line : LINES_string){
                 extractStations(line);
             }
+            setAllStations();
         }catch (FileNotFoundException e){
             System.out.println("the file can't be found");
         }catch (IOException ee){
@@ -37,6 +38,13 @@ public class TxtReader {
         }
     }
 
+    /**
+     *tmp为全文中关于某一条线路的String,使用正则表达式提取出每字符
+     * 单元中两个站的名字与两个站的间距，每个单元只生成一个站，然后
+     * 添加最后一个站，最后一个站距下一个站的距离为零
+     * @param tmp
+     * @return 一条地铁线路并添加到LINES中
+     */
     public static void extractStations(String tmp) {
         if (tmp != null && !tmp.equals("")) {
             String name1 = null;
@@ -51,12 +59,32 @@ public class TxtReader {
                 name2 = matcher.group(2);
                 distance = Double.parseDouble(matcher.group(3));
                 stationNames.add(name1);
-                oneLine.add(new Station(++count,name1,distance));
+                oneLine.add(new Station(0,name1,distance));
 
             }
-            oneLine.add(new Station(++count,name2,0));
+            oneLine.add(new Station(0,name2,0));
             LINES.add(oneLine);
         }
+    }
+
+    /**
+     * 将所有站提取出来，并编号
+     * @return 添加到allStations中
+     */
+    public static void setAllStations(){
+        int count = 0;
+        for (ArrayList<Station> oneLine:LINES){
+            for (Station s:oneLine){
+                if (!allStations.contains(s)){
+                    s.setNumber(count);
+                    allStations.add(s);
+                }
+            }
+        }
+    }
+
+    public static ArrayList<Station> getAllStations(){
+        return allStations;
     }
 
     public static ArrayList<ArrayList<Station>> getLINES(){
