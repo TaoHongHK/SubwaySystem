@@ -124,17 +124,12 @@ public class SubwaySystem {
     public List<Station> getShortestPath(String start,String stop) throws SubwayException{
         Station start_station = findStation(start);
         Station stop_station = findStation(stop);
-        ArrayList<Station> result = new ArrayList<>();
+        ArrayList<Station> result;
         SubwaySystem.EdgeWeightedGraph graph = new SubwaySystem.EdgeWeightedGraph();
         SubwaySystem.DijkstraUndirectedSP SP =
                 new SubwaySystem.DijkstraUndirectedSP(graph,start_station);
         if (SP.hasPathTo(stop_station)){
-            Edge edge = null;
-            for (Edge e:SP.pathTo(stop_station)){
-                edge = e;
-                result.add(edge.getStationV());
-            }
-            result.add(edge.getStationW());
+            result = SP.pathTo(stop_station);
             return result;
         }
         else throw new SubwayException("can't find the way");
@@ -152,27 +147,33 @@ public class SubwaySystem {
         int j = 0;
         ArrayList<String> changeStation = new ArrayList<>();
         try {
-            changeStation.add(searchForLine(path.get(0).getName()));
+            String[] s1 = null;
+            String[] s2 = null;
+            String[] s3 = null;
             for (int i = 1;i<path.size()-1;i++) {
                 if (!ifInOneLine(path.get(i - 1), path.get(i + 1))) {
                     n[i] = 1;
-                    String[] s1 = searchForLine(path.get(i - 1).getName()).split("、");
-                    String[] s2 = searchForLine(path.get(i).getName()).split("、");
-                    String[] s3 = searchForLine(path.get(i + 1).getName()).split("、");
-                    for (String line2 : s2) {
-                        for (String line1 : s1) {
-                            if (line1.equals(line2)) {
-                                if (!changeStation.contains(line1))
-                                    changeStation.add(line1);
-                            }
+                    for (String name1 : oneLineName(path.get(i-1),path.get(i))){
+                        if (changeStation.isEmpty()){
+                            changeStation.add(name1);
                         }
-                        for (String line3 : s3) {
-                            if (line3.equals(line2)) {
-                                if (!changeStation.contains(line3))
-                                    changeStation.add(line3);
-                            }
-                        }
+                        else  if(!changeStation.get(changeStation.size()-1).equals(name1))
+                            changeStation.add(name1);
+                        else continue;
                     }
+                    for (String name2 : oneLineName(path.get(i),path.get(i+1))){
+                        if (changeStation.isEmpty()){
+                            changeStation.add(name2);
+                        }
+                        else  if(!changeStation.get(changeStation.size()-1).equals(name2))
+                            changeStation.add(name2);
+                        else continue;
+                    }
+                }
+            }
+            if (changeStation.isEmpty()) {
+                for (String name3 : oneLineName(path.get(0),path.get(1))){
+                    changeStation.add(name3);
                 }
             }
         }catch (SubwayException e){
@@ -181,13 +182,13 @@ public class SubwaySystem {
         result.append("请乘坐"+changeStation.get(j++)+"从"+path.get(0).getName()+",");
         for (int i = 1;i<n.length - 1;i++){
             if (n[i]==1) {
-                result.append("到" + path.get(i).getName() + ",转"+changeStation.get(j++));
+                result.append("到" + path.get(i).getName() + ",再转"+changeStation.get(j++));
                 if (!path.get(i+1).getName().equals(path.get(path.size()-1))){
                     result.append("从"+path.get(i+1).getName());
                 }
             }
         }
-        result.append("，至终点站"+path.get(path.size()-1).getName());
+        result.append("至终点站"+path.get(path.size()-1).getName());
         return result.toString();
     }
 
@@ -195,7 +196,7 @@ public class SubwaySystem {
      * 输入两个站名，判断是否在同一条线上
      * @param station1
      * @param station2
-     * @return 是否在同一条线上
+     * @return boolean是否在同一条线上
      */
     public boolean ifInOneLine(Station station1,Station station2){
         boolean result = false;
@@ -215,6 +216,32 @@ public class SubwaySystem {
     }
 
     /**
+     * 输入两个站名，判断是否在同一条线上
+     * @param station1
+     * @param station2
+     * @return String[]是否在同一条线上
+     */
+    public String[] oneLineName(Station station1,Station station2)throws SubwayException{
+        ArrayList<String> result = new ArrayList<>();
+        try {
+            if (ifInOneLine(station1,station2)) {
+                String[] lines1 = searchForLine(station1.getName()).split("、");
+                String[] lines2 = searchForLine(station2.getName()).split("、");
+                for (String s : lines1) {
+                    for (String ss : lines2) {
+                        if (s.equals(ss))
+                            result.add(s);
+                    }
+                }
+            }
+            else throw new SubwayException("isn't in one line");
+        }catch (SubwayException e){
+            System.out.println("not Found,caught");
+        }
+        return result.toArray(new String[0]);
+    }
+
+    /**
      * 输入站名，返回对应的站
      * @param name
      * @return 对应站
@@ -227,32 +254,6 @@ public class SubwaySystem {
             }
         }
         throw new SubwayException("not found");
-    }
-
-    /**
-     * 输入两个站，获取两个站点距离
-     * @param station1
-     * @param station2
-     * @return 两个站的距离 :double
-     */
-    public double getDistance(Station station1,Station station2){
-        double result = 0.0;
-        try {
-            if(ifInOneLine(station1,station2)){
-                for (ArrayList<Station> oneLine : LINES) {
-                    for (int i = 0; i < oneLine.size() - 1; i++) {
-                        if ((oneLine.get(i) == station1 && oneLine.get(i + 1) == station2) ||
-                                (oneLine.get(i) == station2 && oneLine.get(i + 1) == station1)) {
-                            result = oneLine.get(i).getDisToNext();
-                        }
-                    }
-                }
-            }
-            else throw new SubwayException("isn't in one line");
-        }catch (SubwayException e){
-            e.printStackTrace();
-        }
-        return result;
     }
 
     /**
@@ -322,11 +323,16 @@ public class SubwaySystem {
         public int either(){
             return v;
         }
-        public Station getStationV(){
+        public Station eitherStation(){
             return stationV;
         }
-        public Station getStationW(){
-            return stationW;
+        public Station otherStatioin(Station S){
+            Station result=null;
+           if (S.getName().equals(stationV.getName()))
+               result = stationW;
+           else if(S.getName().equals(stationW.getName()))
+               result = stationV;
+           return result;
         }
         public int other(int vertex){
             if(vertex==v) return w;
@@ -352,13 +358,13 @@ public class SubwaySystem {
             for (int i = 0;i<=V;i++){
                 adj.add(new ArrayList<>(V+1));
             }
-           for (ArrayList<Station> oneLine : LINES){
-               for (int i = 0;i<oneLine.size()-1;i++){
-                   Edge edge = new Edge(oneLine.get(i),oneLine.get(i+1),
-                           getDistance(oneLine.get(i),oneLine.get(i+1)));
-                   addEdge(edge);
-               }
-           }
+            for (ArrayList<Station> oneLine : LINES){
+                for (int i = 0;i<oneLine.size()-1;i++) {
+                    double distance = oneLine.get(i).getDisToNext();
+                    Edge edge = new Edge(oneLine.get(i),oneLine.get(i+1), distance);
+                    addEdge(edge);
+                }
+            }
         }
 
         public void addEdge(Edge e){
@@ -400,8 +406,10 @@ public class SubwaySystem {
         private double[] distTo;
         private Edge[] edgeTo;
         private IndexMinPQ<Double> pq;
+        private Station source;
 
         public DijkstraUndirectedSP(EdgeWeightedGraph graph,Station source){
+            this.source = source;
             int s = source.getNumber();
             distTo = new double[graph.getV()];
             edgeTo = new Edge[graph.getV()];
@@ -438,14 +446,30 @@ public class SubwaySystem {
             return distTo[stop.getNumber()] < Double.POSITIVE_INFINITY;
         }
 
-        public Iterable<Edge> pathTo(Station stop) {
+        public ArrayList<Station> pathTo(Station stop) {
             int v = stop.getNumber();
             if (!hasPathTo(stop)) return null;
-            Stack<Edge> path = new Stack<Edge>();
+            ArrayList<Edge> Edge_path = new ArrayList<>();
+            ArrayList<Station> path = new ArrayList<>();
             int x = v;
             for (Edge e = edgeTo[v]; e != null; e = edgeTo[x]) {
-                path.push(e);
+                Edge_path.add(e);
                 x = e.other(x);
+            }
+            for (int i = Edge_path.size()-1;i>=0;i--){
+                   if (path.isEmpty()){
+                       Station station1 = Edge_path.get(i).eitherStation();
+                       Station station2 = Edge_path.get(i).otherStatioin(Edge_path.get(i).eitherStation());
+                       if (station1.getName().equals(source.getName())){
+                           path.add(station1);
+                           path.add(station2);
+                       }
+                       else if(station2.getName().equals(source.getName())){
+                           path.add(station2);
+                           path.add(station1);
+                       }
+                   }
+                   else path.add(Edge_path.get(i).otherStatioin(path.get(path.size()-1)));
             }
             return path;
         }
@@ -498,35 +522,15 @@ public class SubwaySystem {
             return true;
         }
 
-        // throw an IllegalArgumentException unless {@code 0 <= v < V}
-        private void validateVertex(int v) {
-            int V = distTo.length;
-            if (v < 0 || v >= V)
-                throw new IllegalArgumentException("vertex " + v + " is not between 0 and " + (V-1));
-        }
-
     }
 
     public static void main(String[] args) {
         SubwaySystem subwaySystem = new SubwaySystem();
-        ArrayList<Station> test = new ArrayList<>();
-        test.add(subwaySystem.getLINES().get(1).get(0));
-        test.add(subwaySystem.getLINES().get(1).get(1));
-        test.add(subwaySystem.getLINES().get(1).get(2));
-        test.add(subwaySystem.getLINES().get(1).get(3));
-        test.add(subwaySystem.getLINES().get(1).get(4));
-        test.add(subwaySystem.getLINES().get(1).get(5));
-        test.add(subwaySystem.getLINES().get(6).get(2));
-        test.add(subwaySystem.getLINES().get(6).get(3));
-        test.add(subwaySystem.getLINES().get(6).get(4));
-        test.add(subwaySystem.getLINES().get(6).get(5));
-        test.add(subwaySystem.getLINES().get(2).get(16));
-        test.add(subwaySystem.getLINES().get(2).get(15));
         try {
             System.out.println(subwaySystem.searchForLine("范湖"));
             System.out.println(subwaySystem.searchForStations("二号线", "天河机场"));
+            List<Station> test = subwaySystem.getShortestPath("黄金口","香港路");
             System.out.println(subwaySystem.printPath(test));
-            System.out.println(subwaySystem.getShortestPath("天河机场","香港路"));
             System.out.println(subwaySystem.normalCost(test));
             System.out.println(subwaySystem.specialCost(test,"武汉通"));
             System.out.println(subwaySystem.specialCost(test,"日票"));

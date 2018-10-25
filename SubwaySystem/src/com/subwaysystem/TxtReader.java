@@ -75,9 +75,30 @@ public class TxtReader {
         int count = 0;
         for (ArrayList<Station> oneLine:LINES){
             for (Station s:oneLine){
-                if (!allStations.contains(s)){
-                    s.setNumber(count);
+                if (allStations.isEmpty()){
+                    s.setNumber(count++);
                     allStations.add(s);
+                }
+                else {
+                    boolean isIn = false;
+                    for (Station s1 : allStations) {
+                        if (!s.getName().equals(s1.getName()))
+                            continue;
+                        else isIn = true;
+                    }
+                    if (isIn==false) {
+                        s.setNumber(count++);
+                        allStations.add(s);
+                    }
+                }
+            }
+        }
+        for (ArrayList<Station> oneLine:LINES){
+            for(Station s : oneLine){
+                for (Station s1: allStations){
+                    if (s.getName().equals(s1.getName())){
+                        s.setNumber(s1.getNumber());
+                    }
                 }
             }
         }
