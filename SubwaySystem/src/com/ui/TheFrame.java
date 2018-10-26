@@ -1,11 +1,7 @@
 package com.ui;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
+import javax.swing.*;
 
-public class TheFrame extends Application{
-    @Override
-    public void start(Stage stage){
+public class TheFrame extends JFrame {
 
-    }
 }

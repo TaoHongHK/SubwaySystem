@@ -10,6 +10,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/SubwaySystem$SubwaySystem.coverage" NAME="SubwaySystem Coverage Results" MODIFIED="1540548766513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.subwaysystem.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="SubwaySystem" />
   </component>
@@ -18,18 +23,18 @@
       <file leaf-file-name="TxtReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/TxtReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="1800">
+              <caret line="81" column="20" lean-forward="false" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="docComment;method#extractStations#0;class#TxtReader#0" expanded="false" />
-                <element signature="method#extractStations#0;class#TxtReader#0" expanded="false" />
-                <element signature="docComment;method#setAllStations#0;class#TxtReader#0" expanded="false" />
-                <element signature="method#setAllStations#0;class#TxtReader#0" expanded="false" />
-                <element signature="e#3673#3674#0" expanded="true" />
-                <element signature="e#3707#3708#0" expanded="true" />
-                <element signature="e#3768#3769#0" expanded="true" />
-                <element signature="e#3796#3797#0" expanded="true" />
+                <element signature="docComment;method#extractStationsAndEdges#0;class#TxtReader#0" expanded="false" />
+                <element signature="docComment;method#addToOneLine#0;class#TxtReader#0" expanded="false" />
+                <element signature="e#3812#3813#0" expanded="true" />
+                <element signature="e#3840#3841#0" expanded="true" />
+                <element signature="e#3900#3901#0" expanded="true" />
+                <element signature="e#3928#3929#0" expanded="true" />
+                <element signature="e#3974#3975#0" expanded="true" />
+                <element signature="e#3996#3997#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -39,10 +44,8 @@
         <entry file="file://$PROJECT_DIR$/src/com/ui/TheFrame.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,10 +53,9 @@
       <file leaf-file-name="SubwaySystem.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/SubwaySystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="933">
-              <caret line="526" column="0" lean-forward="false" selection-start-line="526" selection-start-column="0" selection-end-line="526" selection-end-column="0" />
+            <state relative-caret-position="605">
+              <caret line="295" column="32" lean-forward="false" selection-start-line="295" selection-start-column="32" selection-end-line="295" selection-end-column="32" />
               <folding>
-                <element signature="method#SubwaySystem#0;class#SubwaySystem#0" expanded="false" />
                 <element signature="docComment;method#searchForLine#0;class#SubwaySystem#0" expanded="false" />
                 <element signature="method#searchForLine#0;class#SubwaySystem#0" expanded="false" />
                 <element signature="docComment;method#searchForStations#0;class#SubwaySystem#0" expanded="false" />
@@ -66,31 +68,66 @@
                 <element signature="method#ifInOneLine#0;class#SubwaySystem#0" expanded="false" />
                 <element signature="docComment;method#oneLineName#0;class#SubwaySystem#0" expanded="false" />
                 <element signature="method#oneLineName#0;class#SubwaySystem#0" expanded="false" />
-                <element signature="docComment;method#findStation#0;class#SubwaySystem#0" expanded="false" />
-                <element signature="method#findStation#0;class#SubwaySystem#0" expanded="false" />
+                <element signature="docComment;method#findStationByName#0;class#SubwaySystem#0" expanded="false" />
+                <element signature="method#findStationByName#0;class#SubwaySystem#0" expanded="false" />
+                <element signature="docComment;method#findStationByNumber#0;class#SubwaySystem#0" expanded="false" />
+                <element signature="method#findStationByNumber#0;class#SubwaySystem#0" expanded="false" />
                 <element signature="docComment;method#normalCost#0;class#SubwaySystem#0" expanded="false" />
-                <element signature="method#normalCost#0;class#SubwaySystem#0" expanded="false" />
                 <element signature="docComment;method#specialCost#0;class#SubwaySystem#0" expanded="false" />
                 <element signature="method#specialCost#0;class#SubwaySystem#0" expanded="false" />
-                <element signature="class#Edge#0;class#SubwaySystem#0" expanded="false" />
-                <element signature="method#Edge#0;class#Edge#0;class#SubwaySystem#0" expanded="false" />
-                <element signature="e#11061#11062#0" expanded="true" />
-                <element signature="e#11098#11099#0" expanded="true" />
-                <element signature="e#11128#11129#0" expanded="true" />
-                <element signature="e#11160#11161#0" expanded="true" />
-                <element signature="e#11200#11201#0" expanded="true" />
-                <element signature="e#11239#11240#0" expanded="true" />
-                <element signature="e#11798#11799#0" expanded="true" />
-                <element signature="e#11830#11831#0" expanded="true" />
-                <element signature="class#EdgeWeightedGraph#0;class#SubwaySystem#0" expanded="false" />
-                <element signature="e#12768#12769#0" expanded="true" />
-                <element signature="e#12809#12810#0" expanded="true" />
-                <element signature="e#13477#13478#0" expanded="true" />
-                <element signature="e#13509#13510#0" expanded="true" />
-                <element signature="class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
-                <element signature="method#relax#0;class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
-                <element signature="method#check#0;class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
                 <element signature="method#main#0;class#SubwaySystem#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DijkstraUndirectedSP.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/DijkstraUndirectedSP.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <element signature="method#relax#0;class#DijkstraUndirectedSP#0" expanded="false" />
+                <element signature="e#1174#1175#0" expanded="true" />
+                <element signature="e#1206#1207#0" expanded="true" />
+                <element signature="e#1252#1253#0" expanded="true" />
+                <element signature="e#1326#1327#0" expanded="true" />
+                <element signature="method#pathTo#0;class#DijkstraUndirectedSP#0" expanded="false" />
+                <element signature="method#check#0;class#DijkstraUndirectedSP#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Edge.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/Edge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding>
+                <element signature="method#Edge#0;class#Edge#0" expanded="false" />
+                <element signature="e#564#565#0" expanded="true" />
+                <element signature="e#593#594#0" expanded="true" />
+                <element signature="e#619#620#0" expanded="true" />
+                <element signature="e#643#644#0" expanded="true" />
+                <element signature="e#873#874#0" expanded="true" />
+                <element signature="e#897#898#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EdgeWeightedGraph.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/EdgeWeightedGraph.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+              <folding>
+                <element signature="e#914#915#0" expanded="true" />
+                <element signature="e#947#948#0" expanded="true" />
+                <element signature="method#edges#0;class#EdgeWeightedGraph#0" expanded="false" />
+                <element signature="e#1543#1544#0" expanded="true" />
+                <element signature="e#1567#1568#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -132,28 +169,16 @@
       <file leaf-file-name="Station.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/Station.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+            <state relative-caret-position="96">
+              <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
               <folding>
-                <element signature="e#316#317#0" expanded="true" />
-                <element signature="e#345#346#0" expanded="true" />
-                <element signature="e#384#385#0" expanded="true" />
-                <element signature="e#420#421#0" expanded="true" />
-                <element signature="e#449#450#0" expanded="true" />
-                <element signature="e#476#477#0" expanded="true" />
-                <element signature="e#510#511#0" expanded="true" />
-                <element signature="e#542#543#0" expanded="true" />
+                <element signature="e#233#234#0" expanded="true" />
+                <element signature="e#262#263#0" expanded="true" />
+                <element signature="e#301#302#0" expanded="true" />
+                <element signature="e#337#338#0" expanded="true" />
+                <element signature="e#366#367#0" expanded="true" />
+                <element signature="e#393#394#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SubwaySystem.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SubwaySystem.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -161,8 +186,8 @@
       <file leaf-file-name="subway.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/assets/subway.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="177" column="12" lean-forward="true" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
+            <state relative-caret-position="4248">
+              <caret line="177" column="12" lean-forward="false" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -197,12 +222,13 @@
         <option value="$PROJECT_DIR$/src/com/homework/SubwaySystem.java" />
         <option value="$PROJECT_DIR$/src/com/homework/TxtReader.java" />
         <option value="$PROJECT_DIR$/src/com/com/ui/TheFrame.java" />
-        <option value="$PROJECT_DIR$/src/com/ui/TheFrame.java" />
-        <option value="$PROJECT_DIR$/src/com/subwaysystem/Edge.java" />
         <option value="$PROJECT_DIR$/src/com/subwaysystem/Graph.java" />
-        <option value="$PROJECT_DIR$/src/com/subwaysystem/DijkstraUndirectedSP.java" />
         <option value="$PROJECT_DIR$/src/com/subwaysystem/IndexMinPQ.java" />
         <option value="$PROJECT_DIR$/src/com/subwaysystem/Station.java" />
+        <option value="$PROJECT_DIR$/src/com/subwaysystem/Edge.java" />
+        <option value="$PROJECT_DIR$/src/com/subwaysystem/DijkstraUndirectedSP.java" />
+        <option value="$PROJECT_DIR$/src/com/ui/TheFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/subwaysystem/EdgeWeightedGraph.java" />
         <option value="$PROJECT_DIR$/src/com/subwaysystem/TxtReader.java" />
         <option value="$PROJECT_DIR$/src/com/subwaysystem/SubwaySystem.java" />
       </list>
@@ -229,8 +255,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-362" />
-    <option name="y" value="13" />
+    <option name="x" value="-8" />
+    <option name="y" value="17" />
     <option name="width" value="1577" />
     <option name="height" value="997" />
   </component>
@@ -249,6 +275,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -285,10 +312,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,6 +322,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -467,12 +494,17 @@
       <workItem from="1540260224620" duration="5197000" />
       <workItem from="1540269006384" duration="13469000" />
       <workItem from="1540354869664" duration="20367000" />
-      <workItem from="1540429631092" duration="16583000" />
+      <workItem from="1540429631092" duration="18702000" />
+      <workItem from="1540450442700" duration="631000" />
+      <workItem from="1540477378343" duration="8658000" />
+      <workItem from="1540522863967" duration="9033000" />
+      <workItem from="1540550128048" duration="4407000" />
+      <workItem from="1540562586517" duration="1803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74187000" />
+    <option name="totallyTimeSpent" value="100838000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -485,36 +517,36 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="2578" height="1408" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902184" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821342" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20048505" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16976556" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17571884" sideWeight="0.4944356" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18570288" sideWeight="0.4944356" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24954128" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2360515" sideWeight="0.5055644" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28617623" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5109135" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947284" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,13 +557,9 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="110" />
+      <option name="time" value="130" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="this" />
-      </configuration>
-    </watches-manager>
+    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -547,67 +575,20 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/SubwaySystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11016">
-          <caret line="459" column="17" lean-forward="true" selection-start-line="459" selection-start-column="17" selection-end-line="459" selection-end-column="17" />
-          <folding>
-            <element signature="method#SubwaySystem#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="docComment;method#searchForLine#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#searchForLine#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="docComment;method#searchForStations#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#searchForStations#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="docComment;method#getShortestPath#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#getShortestPath#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="docComment;method#printPath#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#printPath#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="docComment;method#ifInOneLine#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#ifInOneLine#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="docComment;method#oneLineName#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#oneLineName#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="docComment;method#findStation#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#findStation#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="docComment;method#normalCost#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#normalCost#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="docComment;method#specialCost#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#specialCost#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="class#Edge#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#Edge#0;class#Edge#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="e#11061#11062#0" expanded="true" />
-            <element signature="e#11098#11099#0" expanded="true" />
-            <element signature="e#11128#11129#0" expanded="true" />
-            <element signature="e#11160#11161#0" expanded="true" />
-            <element signature="e#11200#11201#0" expanded="true" />
-            <element signature="e#11239#11240#0" expanded="true" />
-            <element signature="e#11798#11799#0" expanded="true" />
-            <element signature="e#11830#11831#0" expanded="true" />
-            <element signature="class#EdgeWeightedGraph#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="e#12768#12769#0" expanded="true" />
-            <element signature="e#12809#12810#0" expanded="true" />
-            <element signature="e#13477#13478#0" expanded="true" />
-            <element signature="e#13509#13510#0" expanded="true" />
-            <element signature="class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#relax#0;class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#check#0;class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#main#0;class#SubwaySystem#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/TxtReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="984">
           <caret line="61" column="48" lean-forward="false" selection-start-line="61" selection-start-column="48" selection-end-line="61" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#extractStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="method#extractStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="docComment;method#setAllStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="method#setAllStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3707#3708#0" expanded="true" />
-            <element signature="e#3768#3769#0" expanded="true" />
-            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="docComment;method#extractStationsAndEdges#0;class#TxtReader#0" expanded="false" />
+            <element signature="docComment;method#addToOneLine#0;class#TxtReader#0" expanded="false" />
+            <element signature="e#3812#3813#0" expanded="true" />
+            <element signature="e#3840#3841#0" expanded="true" />
+            <element signature="e#3900#3901#0" expanded="true" />
+            <element signature="e#3928#3929#0" expanded="true" />
+            <element signature="e#3974#3975#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -619,14 +600,12 @@
         <state relative-caret-position="360">
           <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding>
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -635,7 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -652,7 +630,6 @@
         <state relative-caret-position="5760">
           <caret line="240" column="43" lean-forward="false" selection-start-line="240" selection-start-column="43" selection-end-line="240" selection-end-column="43" />
           <folding>
-            <element signature="method#SubwaySystem#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#searchForLine#0;class#SubwaySystem#0" expanded="false" />
             <element signature="method#searchForLine#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#searchForStations#0;class#SubwaySystem#0" expanded="false" />
@@ -665,30 +642,13 @@
             <element signature="method#ifInOneLine#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#oneLineName#0;class#SubwaySystem#0" expanded="false" />
             <element signature="method#oneLineName#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="docComment;method#findStation#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#findStation#0;class#SubwaySystem#0" expanded="false" />
+            <element signature="docComment;method#findStationByName#0;class#SubwaySystem#0" expanded="false" />
+            <element signature="method#findStationByName#0;class#SubwaySystem#0" expanded="false" />
+            <element signature="docComment;method#findStationByNumber#0;class#SubwaySystem#0" expanded="false" />
+            <element signature="method#findStationByNumber#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#normalCost#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#normalCost#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#specialCost#0;class#SubwaySystem#0" expanded="false" />
             <element signature="method#specialCost#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="class#Edge#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#Edge#0;class#Edge#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="e#11061#11062#0" expanded="true" />
-            <element signature="e#11098#11099#0" expanded="true" />
-            <element signature="e#11128#11129#0" expanded="true" />
-            <element signature="e#11160#11161#0" expanded="true" />
-            <element signature="e#11200#11201#0" expanded="true" />
-            <element signature="e#11239#11240#0" expanded="true" />
-            <element signature="e#11798#11799#0" expanded="true" />
-            <element signature="e#11830#11831#0" expanded="true" />
-            <element signature="class#EdgeWeightedGraph#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="e#12768#12769#0" expanded="true" />
-            <element signature="e#12809#12810#0" expanded="true" />
-            <element signature="e#13477#13478#0" expanded="true" />
-            <element signature="e#13509#13510#0" expanded="true" />
-            <element signature="class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#relax#0;class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#check#0;class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
             <element signature="method#main#0;class#SubwaySystem#0" expanded="false" />
           </folding>
         </state>
@@ -700,14 +660,14 @@
           <caret line="61" column="48" lean-forward="false" selection-start-line="61" selection-start-column="48" selection-end-line="61" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#extractStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="method#extractStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="docComment;method#setAllStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="method#setAllStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3707#3708#0" expanded="true" />
-            <element signature="e#3768#3769#0" expanded="true" />
-            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="docComment;method#extractStationsAndEdges#0;class#TxtReader#0" expanded="false" />
+            <element signature="docComment;method#addToOneLine#0;class#TxtReader#0" expanded="false" />
+            <element signature="e#3812#3813#0" expanded="true" />
+            <element signature="e#3840#3841#0" expanded="true" />
+            <element signature="e#3900#3901#0" expanded="true" />
+            <element signature="e#3928#3929#0" expanded="true" />
+            <element signature="e#3974#3975#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -719,14 +679,12 @@
         <state relative-caret-position="240">
           <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
           <folding>
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -735,7 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,7 +709,6 @@
         <state relative-caret-position="3024">
           <caret line="126" column="44" lean-forward="true" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
           <folding>
-            <element signature="method#SubwaySystem#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#searchForLine#0;class#SubwaySystem#0" expanded="false" />
             <element signature="method#searchForLine#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#searchForStations#0;class#SubwaySystem#0" expanded="false" />
@@ -765,30 +721,13 @@
             <element signature="method#ifInOneLine#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#oneLineName#0;class#SubwaySystem#0" expanded="false" />
             <element signature="method#oneLineName#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="docComment;method#findStation#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#findStation#0;class#SubwaySystem#0" expanded="false" />
+            <element signature="docComment;method#findStationByName#0;class#SubwaySystem#0" expanded="false" />
+            <element signature="method#findStationByName#0;class#SubwaySystem#0" expanded="false" />
+            <element signature="docComment;method#findStationByNumber#0;class#SubwaySystem#0" expanded="false" />
+            <element signature="method#findStationByNumber#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#normalCost#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#normalCost#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#specialCost#0;class#SubwaySystem#0" expanded="false" />
             <element signature="method#specialCost#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="class#Edge#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#Edge#0;class#Edge#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="e#11061#11062#0" expanded="true" />
-            <element signature="e#11098#11099#0" expanded="true" />
-            <element signature="e#11128#11129#0" expanded="true" />
-            <element signature="e#11160#11161#0" expanded="true" />
-            <element signature="e#11200#11201#0" expanded="true" />
-            <element signature="e#11239#11240#0" expanded="true" />
-            <element signature="e#11798#11799#0" expanded="true" />
-            <element signature="e#11830#11831#0" expanded="true" />
-            <element signature="class#EdgeWeightedGraph#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="e#12768#12769#0" expanded="true" />
-            <element signature="e#12809#12810#0" expanded="true" />
-            <element signature="e#13477#13478#0" expanded="true" />
-            <element signature="e#13509#13510#0" expanded="true" />
-            <element signature="class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#relax#0;class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#check#0;class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
             <element signature="method#main#0;class#SubwaySystem#0" expanded="false" />
           </folding>
         </state>
@@ -800,14 +739,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#extractStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="method#extractStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="docComment;method#setAllStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="method#setAllStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3707#3708#0" expanded="true" />
-            <element signature="e#3768#3769#0" expanded="true" />
-            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="docComment;method#extractStationsAndEdges#0;class#TxtReader#0" expanded="false" />
+            <element signature="docComment;method#addToOneLine#0;class#TxtReader#0" expanded="false" />
+            <element signature="e#3812#3813#0" expanded="true" />
+            <element signature="e#3840#3841#0" expanded="true" />
+            <element signature="e#3900#3901#0" expanded="true" />
+            <element signature="e#3928#3929#0" expanded="true" />
+            <element signature="e#3974#3975#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -826,14 +765,12 @@
         <state relative-caret-position="240">
           <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
           <folding>
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -842,7 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -860,14 +796,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#extractStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="method#extractStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="docComment;method#setAllStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="method#setAllStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3707#3708#0" expanded="true" />
-            <element signature="e#3768#3769#0" expanded="true" />
-            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="docComment;method#extractStationsAndEdges#0;class#TxtReader#0" expanded="false" />
+            <element signature="docComment;method#addToOneLine#0;class#TxtReader#0" expanded="false" />
+            <element signature="e#3812#3813#0" expanded="true" />
+            <element signature="e#3840#3841#0" expanded="true" />
+            <element signature="e#3900#3901#0" expanded="true" />
+            <element signature="e#3928#3929#0" expanded="true" />
+            <element signature="e#3974#3975#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -886,14 +822,12 @@
         <state relative-caret-position="240">
           <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
           <folding>
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -902,7 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -920,14 +853,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;method#extractStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="method#extractStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="docComment;method#setAllStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="method#setAllStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3707#3708#0" expanded="true" />
-            <element signature="e#3768#3769#0" expanded="true" />
-            <element signature="e#3796#3797#0" expanded="true" />
+            <element signature="docComment;method#extractStationsAndEdges#0;class#TxtReader#0" expanded="false" />
+            <element signature="docComment;method#addToOneLine#0;class#TxtReader#0" expanded="false" />
+            <element signature="e#3812#3813#0" expanded="true" />
+            <element signature="e#3840#3841#0" expanded="true" />
+            <element signature="e#3900#3901#0" expanded="true" />
+            <element signature="e#3928#3929#0" expanded="true" />
+            <element signature="e#3974#3975#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -937,14 +870,12 @@
         <state relative-caret-position="168">
           <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding>
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -953,7 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,7 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -986,18 +915,22 @@
     <entry file="file://$PROJECT_DIR$/src/com/homework/DirectedEdge.java" />
     <entry file="file://$PROJECT_DIR$/src/com/homework/EdgeWeightedDigraph.java" />
     <entry file="file://$PROJECT_DIR$/src/com/homework/IllegalArgumentException.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/ui/TheFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/Graph.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/Station.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="96">
+          <caret line="4" column="24" lean-forward="false" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/Graph.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/DijkstraUndirectedSP.java" />
     <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/IndexMinPQ.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4128">
@@ -1016,7 +949,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/Edge.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/Edge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="method#Edge#0;class#Edge#0" expanded="false" />
+            <element signature="e#564#565#0" expanded="true" />
+            <element signature="e#593#594#0" expanded="true" />
+            <element signature="e#619#620#0" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+            <element signature="e#873#874#0" expanded="true" />
+            <element signature="e#897#898#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/SubwayException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1028,55 +976,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/TxtReader.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ui/TheFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#extractStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="method#extractStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="docComment;method#setAllStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="method#setAllStations#0;class#TxtReader#0" expanded="false" />
-            <element signature="e#3673#3674#0" expanded="true" />
-            <element signature="e#3707#3708#0" expanded="true" />
-            <element signature="e#3768#3769#0" expanded="true" />
-            <element signature="e#3796#3797#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/Station.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding>
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#542#543#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="168">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/assets/subway.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="177" column="12" lean-forward="true" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
+        <state relative-caret-position="4248">
+          <caret line="177" column="12" lean-forward="false" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/EdgeWeightedGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" column="19" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding>
+            <element signature="e#914#915#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="method#edges#0;class#EdgeWeightedGraph#0" expanded="false" />
+            <element signature="e#1543#1544#0" expanded="true" />
+            <element signature="e#1567#1568#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/DijkstraUndirectedSP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="method#relax#0;class#DijkstraUndirectedSP#0" expanded="false" />
+            <element signature="e#1174#1175#0" expanded="true" />
+            <element signature="e#1206#1207#0" expanded="true" />
+            <element signature="e#1252#1253#0" expanded="true" />
+            <element signature="e#1326#1327#0" expanded="true" />
+            <element signature="method#pathTo#0;class#DijkstraUndirectedSP#0" expanded="false" />
+            <element signature="method#check#0;class#DijkstraUndirectedSP#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/TxtReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="81" column="20" lean-forward="false" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#extractStationsAndEdges#0;class#TxtReader#0" expanded="false" />
+            <element signature="docComment;method#addToOneLine#0;class#TxtReader#0" expanded="false" />
+            <element signature="e#3812#3813#0" expanded="true" />
+            <element signature="e#3840#3841#0" expanded="true" />
+            <element signature="e#3900#3901#0" expanded="true" />
+            <element signature="e#3928#3929#0" expanded="true" />
+            <element signature="e#3974#3975#0" expanded="true" />
+            <element signature="e#3996#3997#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/subwaysystem/SubwaySystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="933">
-          <caret line="526" column="0" lean-forward="false" selection-start-line="526" selection-start-column="0" selection-end-line="526" selection-end-column="0" />
+        <state relative-caret-position="605">
+          <caret line="295" column="32" lean-forward="false" selection-start-line="295" selection-start-column="32" selection-end-line="295" selection-end-column="32" />
           <folding>
-            <element signature="method#SubwaySystem#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#searchForLine#0;class#SubwaySystem#0" expanded="false" />
             <element signature="method#searchForLine#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#searchForStations#0;class#SubwaySystem#0" expanded="false" />
@@ -1089,30 +1057,13 @@
             <element signature="method#ifInOneLine#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#oneLineName#0;class#SubwaySystem#0" expanded="false" />
             <element signature="method#oneLineName#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="docComment;method#findStation#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#findStation#0;class#SubwaySystem#0" expanded="false" />
+            <element signature="docComment;method#findStationByName#0;class#SubwaySystem#0" expanded="false" />
+            <element signature="method#findStationByName#0;class#SubwaySystem#0" expanded="false" />
+            <element signature="docComment;method#findStationByNumber#0;class#SubwaySystem#0" expanded="false" />
+            <element signature="method#findStationByNumber#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#normalCost#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#normalCost#0;class#SubwaySystem#0" expanded="false" />
             <element signature="docComment;method#specialCost#0;class#SubwaySystem#0" expanded="false" />
             <element signature="method#specialCost#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="class#Edge#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#Edge#0;class#Edge#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="e#11061#11062#0" expanded="true" />
-            <element signature="e#11098#11099#0" expanded="true" />
-            <element signature="e#11128#11129#0" expanded="true" />
-            <element signature="e#11160#11161#0" expanded="true" />
-            <element signature="e#11200#11201#0" expanded="true" />
-            <element signature="e#11239#11240#0" expanded="true" />
-            <element signature="e#11798#11799#0" expanded="true" />
-            <element signature="e#11830#11831#0" expanded="true" />
-            <element signature="class#EdgeWeightedGraph#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="e#12768#12769#0" expanded="true" />
-            <element signature="e#12809#12810#0" expanded="true" />
-            <element signature="e#13477#13478#0" expanded="true" />
-            <element signature="e#13509#13510#0" expanded="true" />
-            <element signature="class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#relax#0;class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
-            <element signature="method#check#0;class#DijkstraUndirectedSP#0;class#SubwaySystem#0" expanded="false" />
             <element signature="method#main#0;class#SubwaySystem#0" expanded="false" />
           </folding>
         </state>
