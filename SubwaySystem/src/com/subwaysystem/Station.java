@@ -3,12 +3,10 @@ package com.subwaysystem;
 public class Station {
     private int number;
     private String name;
-    private double disToNext;
 
-    public Station(int number,String name,double disToNext){
+    public Station(int number,String name){
         this.number = number;
         this.name = name;
-        this.disToNext = disToNext;
     }
 
     public int getNumber(){
@@ -19,8 +17,5 @@ public class Station {
     }
     public String getName(){
         return name;
-    }
-    public double getDisToNext(){
-        return disToNext;
     }
 }

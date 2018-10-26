@@ -4,18 +4,14 @@ import java.util.*;
 
 public class SubwaySystem {
     private final ArrayList<ArrayList<Station>> LINES;
-    private final ArrayList<Station> allStations;
+    private final ArrayList<Edge> EDGES;
     private static final String TYPE_WUHANTONG = "武汉通";
     private static final String TYPE_RIPIAO = "日票";
 
     public SubwaySystem(){
         TxtReader.read();
         this.LINES = TxtReader.getLINES();
-        this.allStations = TxtReader.getAllStations();
-    }
-
-    public ArrayList<ArrayList<Station>> getLINES() {
-        return LINES;
+        this.EDGES = TxtReader.getEdges();
     }
 
     /**
@@ -23,7 +19,7 @@ public class SubwaySystem {
      * @param station
      * @return 含有此站的所有线路名称
      * @throws SubwayException
-     */
+     **/
     public String searchForLine(String station) throws SubwayException{
         StringBuffer result = new StringBuffer();
         if (station!=null){
@@ -69,7 +65,7 @@ public class SubwaySystem {
      * @param direction
      * @return 按顺序该路线上的所有站名
      * @throws SubwayException
-     */
+     **/
     public String searchForStations(String line,String direction) throws SubwayException{
         ArrayList<Station> onLine;
         String result = null;
@@ -120,16 +116,17 @@ public class SubwaySystem {
      * @param stop
      * @return 最短路径上经过的所有站的集合
      * @throws SubwayException
-     */
+     **/
     public List<Station> getShortestPath(String start,String stop) throws SubwayException{
-        Station start_station = findStation(start);
-        Station stop_station = findStation(stop);
-        ArrayList<Station> result;
-        SubwaySystem.EdgeWeightedGraph graph = new SubwaySystem.EdgeWeightedGraph();
-        SubwaySystem.DijkstraUndirectedSP SP =
-                new SubwaySystem.DijkstraUndirectedSP(graph,start_station);
+        Station start_station = findStationByName(start);
+        Station stop_station = findStationByName(stop);
+        ArrayList<Station> result = new ArrayList<>();
+        EdgeWeightedGraph graph = new EdgeWeightedGraph(EDGES);
+        DijkstraUndirectedSP SP = new DijkstraUndirectedSP(graph,start_station.getNumber());
         if (SP.hasPathTo(stop_station)){
-            result = SP.pathTo(stop_station);
+            for (int i: SP.pathTo(stop_station)){
+                result.add(findStationByNumber(i));
+            }
             return result;
         }
         else throw new SubwayException("can't find the way");
@@ -140,7 +137,7 @@ public class SubwaySystem {
      * 判断间隔站是否在同一条线上，如果不是，那么中间站就是换乘站
      * 再获取换乘站前后站所在的线路
      * @param path
-     */
+     **/
     public String printPath(List<Station> path){
         StringBuffer result = new StringBuffer();
         int[] n = new int[path.size()];
@@ -184,7 +181,7 @@ public class SubwaySystem {
             if (n[i]==1) {
                 result.append("到" + path.get(i).getName() + ",再转"+changeStation.get(j++));
                 if (!path.get(i+1).getName().equals(path.get(path.size()-1))){
-                    result.append("从"+path.get(i+1).getName());
+                    result.append("从"+path.get(i).getName());
                 }
             }
         }
@@ -197,7 +194,7 @@ public class SubwaySystem {
      * @param station1
      * @param station2
      * @return boolean是否在同一条线上
-     */
+     **/
     public boolean ifInOneLine(Station station1,Station station2){
         boolean result = false;
         try {
@@ -220,7 +217,7 @@ public class SubwaySystem {
      * @param station1
      * @param station2
      * @return String[]是否在同一条线上
-     */
+     **/
     public String[] oneLineName(Station station1,Station station2)throws SubwayException{
         ArrayList<String> result = new ArrayList<>();
         try {
@@ -246,11 +243,30 @@ public class SubwaySystem {
      * @param name
      * @return 对应站
      * @throws SubwayException
-     */
-    public Station findStation(String name) throws SubwayException{
-        for (Station station:allStations){
-            if(station.getName().equals(name)){
-                return station;
+     **/
+    public Station findStationByName(String name) throws SubwayException{
+        for (ArrayList<Station> oneLine : LINES){
+            for (Station s : oneLine){
+                if (s.getName().equals(name)){
+                    return s;
+                }
+            }
+        }
+        throw new SubwayException("not found");
+    }
+
+    /**
+     * 输入编号，返回对应的站
+     * @param number
+     * @return 对应站
+     * @throws SubwayException
+     **/
+    public Station findStationByNumber(int number) throws SubwayException{
+        for (ArrayList<Station> oneLine : LINES){
+            for (Station s : oneLine){
+                if (s.getNumber() == number){
+                    return s;
+                }
             }
         }
         throw new SubwayException("not found");
@@ -260,35 +276,41 @@ public class SubwaySystem {
      *给定路径，计算普通票价的消费
      * @param path
      * @return 普通票价花费
-     */
+     **/
     public int normalCost(List<Station> path){
         int result = 0;
         double distance = 0.0;
-        for (Station station : path){
-            distance+=station.getDisToNext();
+        for (Edge edge : EDGES){
+            for (int i = 0;i<path.size()-1;i++){
+
+                if (path.get(i).getNumber()==edge.either()
+                        &&path.get(i+1).getNumber()==edge.other(edge.either())){
+                    distance+=edge.getWeight();
+                }
+                else if(path.get(i+1).getNumber()==edge.either()
+                        &&path.get(i).getNumber()==edge.other(edge.either())){
+                    distance+=edge.getWeight();
+                }
+            }
         }
         if (distance>0&&distance<=9){
             result = 2;
-        }else if (distance>9&&distance<=14){
-            result = 3;
-        }else if (distance>14){
-            int more = (int)(distance-14)/2;
-            if ((distance-14)/2-more==0){
-                result = 3+more;
-            }else {
-                result = 3+more+1;
-            }
-        }
-
+        } else result = getMoney(distance-9,5);
         return result;
+    }
+
+    public int getMoney(double distance,int n){
+        if(distance-n<=0){
+            return (n+1)/2;
+        }else return getMoney(distance-n,n+2);
     }
 
     /**
      * 计算使用武汉通和日票乘客的票价
-     * @param path
+     * @param
      * @return 计算使用武汉通和日票乘客的票价
-     */
-    public double specialCost(List<Station> path,String type){
+     **/
+   public double specialCost(List<Station> path,String type){
         double result = 0.0;
         if (type.equals(TYPE_RIPIAO)){
             result = 0.0;
@@ -298,241 +320,15 @@ public class SubwaySystem {
         return result;
     }
 
-    private class Edge implements Comparable<Edge>{
-        private final int v;
-        private final Station stationV;
-        private final int w;
-        private final Station stationW;
-        private final double weight;
-
-        public Edge(Station stationV,Station stationW,double weight){
-            if (stationV==null) throw new IllegalArgumentException("vertex station can't be null");
-            if(stationW==null) throw new IllegalArgumentException("vertex station can't be null");
-            if(Double.isNaN(weight)) throw new IllegalArgumentException("weight is nan");
-            this.stationV = stationV;
-            this.stationW = stationW;
-            this.v = stationV.getNumber();
-            this.w = stationW.getNumber();
-            this.weight = weight;
-        }
-
-        public double getWeight(){
-            return weight;
-        }
-
-        public int either(){
-            return v;
-        }
-        public Station eitherStation(){
-            return stationV;
-        }
-        public Station otherStatioin(Station S){
-            Station result=null;
-           if (S.getName().equals(stationV.getName()))
-               result = stationW;
-           else if(S.getName().equals(stationW.getName()))
-               result = stationV;
-           return result;
-        }
-        public int other(int vertex){
-            if(vertex==v) return w;
-            else if(vertex==w) return v;
-            else throw new IllegalArgumentException("Illegal endpoint");
-        }
-
-
-        @Override
-        public int compareTo(Edge edge){
-            return 0;
-        }
-    }
-
-    private class EdgeWeightedGraph{
-        private final int V;
-        private int E;
-        private ArrayList<ArrayList<Edge>> adj;
-
-        public EdgeWeightedGraph(){
-            this.V = allStations.size();
-            adj = new ArrayList<>(V+1);
-            for (int i = 0;i<=V;i++){
-                adj.add(new ArrayList<>(V+1));
-            }
-            for (ArrayList<Station> oneLine : LINES){
-                for (int i = 0;i<oneLine.size()-1;i++) {
-                    double distance = oneLine.get(i).getDisToNext();
-                    Edge edge = new Edge(oneLine.get(i),oneLine.get(i+1), distance);
-                    addEdge(edge);
-                }
-            }
-        }
-
-        public void addEdge(Edge e){
-            int v = e.either();
-            int w = e.other(v);
-            adj.get(v).add(e);
-            adj.get(w).add(e);
-            E++;
-        }
-
-        public ArrayList<Edge> adj(int v){
-            return adj.get(v);
-        }
-
-        public Iterable<Edge> edges() {
-            ArrayList<Edge> list = new ArrayList<>();
-            for (int v = 0; v < V; v++) {
-                int selfLoops = 0;
-                for (Edge e : adj(v)) {
-                    if (e.other(v) > v) {
-                        list.add(e);
-                    }
-                    // add only one copy of each self loop (self loops will be consecutive)
-                    else if (e.other(v) == v) {
-                        if (selfLoops % 2 == 0) list.add(e);
-                        selfLoops++;
-                    }
-                }
-            }
-            return list;
-        }
-
-        public int getV(){
-            return V;
-        }
-    }
-
-    private class DijkstraUndirectedSP{
-        private double[] distTo;
-        private Edge[] edgeTo;
-        private IndexMinPQ<Double> pq;
-        private Station source;
-
-        public DijkstraUndirectedSP(EdgeWeightedGraph graph,Station source){
-            this.source = source;
-            int s = source.getNumber();
-            distTo = new double[graph.getV()];
-            edgeTo = new Edge[graph.getV()];
-            for(int v = 0;v<graph.V;v++){
-                distTo[v] = Double.POSITIVE_INFINITY;
-            }
-            distTo[s] = 0.0;
-            pq = new IndexMinPQ<>(graph.getV());
-            pq.insert(s,distTo[s]);
-            while(!pq.isEmpty()){
-                int v = pq.delMin();
-                for (Edge e : graph.adj.get(v)){
-                    relax(e,v);
-                }
-            }
-            assert check(graph,s);
-        }
-
-        public void relax(Edge e,int v){
-            int w = e.other(v);
-            if (distTo[w] > distTo[v] + e.getWeight()) {
-                distTo[w] = distTo[v] + e.getWeight();
-                edgeTo[w] = e;
-                if (pq.contains(w)) pq.decreaseKey(w, distTo[w]);
-                else                pq.insert(w, distTo[w]);
-            }
-        }
-
-        public double distTo(int v) {
-            return distTo[v];
-        }
-
-        public boolean hasPathTo(Station stop) {
-            return distTo[stop.getNumber()] < Double.POSITIVE_INFINITY;
-        }
-
-        public ArrayList<Station> pathTo(Station stop) {
-            int v = stop.getNumber();
-            if (!hasPathTo(stop)) return null;
-            ArrayList<Edge> Edge_path = new ArrayList<>();
-            ArrayList<Station> path = new ArrayList<>();
-            int x = v;
-            for (Edge e = edgeTo[v]; e != null; e = edgeTo[x]) {
-                Edge_path.add(e);
-                x = e.other(x);
-            }
-            for (int i = Edge_path.size()-1;i>=0;i--){
-                   if (path.isEmpty()){
-                       Station station1 = Edge_path.get(i).eitherStation();
-                       Station station2 = Edge_path.get(i).otherStatioin(Edge_path.get(i).eitherStation());
-                       if (station1.getName().equals(source.getName())){
-                           path.add(station1);
-                           path.add(station2);
-                       }
-                       else if(station2.getName().equals(source.getName())){
-                           path.add(station2);
-                           path.add(station1);
-                       }
-                   }
-                   else path.add(Edge_path.get(i).otherStatioin(path.get(path.size()-1)));
-            }
-            return path;
-        }
-
-        private boolean check(EdgeWeightedGraph G, int s) {
-
-            // check that edge weights are nonnegative
-            for (Edge e : G.edges()) {
-                if (e.getWeight()< 0) {
-                    System.err.println("negative edge weight detected");
-                    return false;
-                }
-            }
-
-            // check that distTo[v] and edgeTo[v] are consistent
-            if (distTo[s] != 0.0 || edgeTo[s] != null) {
-                System.err.println("distTo[s] and edgeTo[s] inconsistent");
-                return false;
-            }
-            for (int v = 0; v < G.getV(); v++) {
-                if (v == s) continue;
-                if (edgeTo[v] == null && distTo[v] != Double.POSITIVE_INFINITY) {
-                    System.err.println("distTo[] and edgeTo[] inconsistent");
-                    return false;
-                }
-            }
-
-            // check that all edges e = v-w satisfy distTo[w] <= distTo[v] + e.weight()
-            for (int v = 0; v < G.getV(); v++) {
-                for (Edge e : G.adj(v)) {
-                    int w = e.other(v);
-                    if (distTo[v] + e.getWeight()< distTo[w]) {
-                        System.err.println("edge " + e + " not relaxed");
-                        return false;
-                    }
-                }
-            }
-
-            // check that all edges e = v-w on SPT satisfy distTo[w] == distTo[v] + e.weight()
-            for (int w = 0; w < G.getV(); w++) {
-                if (edgeTo[w] == null) continue;
-                Edge e = edgeTo[w];
-                if (w != e.either() && w != e.other(e.either())) return false;
-                int v = e.other(w);
-                if (distTo[v] + e.getWeight() != distTo[w]) {
-                    System.err.println("edge " + e + " on shortest path not tight");
-                    return false;
-                }
-            }
-            return true;
-        }
-
-    }
-
     public static void main(String[] args) {
         SubwaySystem subwaySystem = new SubwaySystem();
         try {
             System.out.println(subwaySystem.searchForLine("范湖"));
             System.out.println(subwaySystem.searchForStations("二号线", "天河机场"));
-            List<Station> test = subwaySystem.getShortestPath("黄金口","香港路");
+            List<Station> test = subwaySystem.getShortestPath("汉口火车站","光谷广场");
             System.out.println(subwaySystem.printPath(test));
             System.out.println(subwaySystem.normalCost(test));
-            System.out.println(subwaySystem.specialCost(test,"武汉通"));
+            System.out.println(String.format("%.2f",subwaySystem.specialCost(test,"武汉通")));
             System.out.println(subwaySystem.specialCost(test,"日票"));
         }catch (SubwayException e){
             System.out.println("this station or line is not existed,caught!");
