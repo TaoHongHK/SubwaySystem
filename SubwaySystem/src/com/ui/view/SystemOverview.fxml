@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="670.0" prefWidth="1199.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.view.SystemOverviewController">
+   <children>
+      <SplitPane dividerPositions="0.5764411027568922" layoutX="4.0" layoutY="3.0" prefHeight="670.0" prefWidth="1020.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="654.0" prefWidth="622.0">
+               <children>
+                  <ImageView fitHeight="334.0" fitWidth="684.0" layoutX="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/lineall.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="327.0" fitWidth="690.0" layoutX="3.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/jsztu_0_0.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="654.0" prefWidth="474.0">
+               <children>
+                  <Button fx:id="linesSearch" layoutX="189.0" layoutY="478.0" mnemonicParsing="false" onAction="#handleLinesSearch" prefHeight="34.0" prefWidth="126.0" text="站线查询" />
+                  <Button fx:id="pathSearch" layoutX="189.0" layoutY="571.0" mnemonicParsing="false" onAction="#handlePathSearch" prefHeight="34.0" prefWidth="126.0" text="路线查询" />
+                  <TextArea fx:id="textArea" editable="false" layoutX="-1.0" layoutY="7.0" prefHeight="383.0" prefWidth="506.0" text="&#9;&#9;&#9;&#9;&#9;&#9;&#9;  乘客须知&#10;一、 乘坐轨道交通的乘客，应讲究文明礼貌，自觉遵守维护乘坐轨道交通的秩序。&#10;二、 乘客应持有效车票进站乘车。无车票或持无效车票乘车以及拒绝票务人员验票的，按武汉市相关条例处理。&#10;三、 每位乘客可免费携带一名身高1.2米以下的儿童乘车，超过一名的应按超过人数购票；乘客携带的物品，总重量、长度、体积分别不得超过20千克、1.6米和0.15立方米。&#10;四、 乘客须经检票后有序地进入站台，在黄色安全线以内候车；候车和上下车时不要互相拥挤；严禁在站台边缘与安全线之间行走、坐卧、放置物品。&#10;五、 乘客应在列车停稳后先下后上，依次登车；当列车关门提示警铃鸣响时，停止上下车；车门开启、关闭时，不得触摸车门；不得手扶车门或挤靠车门。&#10;六、 列车到达终点站后乘客应全部下车，不要在车厢或车站内长时间逗留。&#10;七、 乘自动扶梯时，应握紧扶手、靠右站稳，不要多人挤站在同一级扶梯或在扶梯上打闹、奔跑。&#10;八、 衣履不整者，不得进站乘车；身高1.2米以下的儿童、酗酒者、精神病患者、智障、行动不便者等进站乘车须有健康成人陪同。&#10;九、 乘客须自觉维护车站和列车整洁，爱护公共财物，维护公共秩序，在轨道交通车站或列车上，不得有以下行为：&#10;（一） 吸烟、随地吐痰、便溺、吐口香糖，乱扔果皮纸屑等杂物；&#10;（二） 卖艺、乞讨、躺卧、踩踏坐席；&#10;（三） 涂写、刻划、张贴；&#10;（四） 擅自销售物品；&#10;（五） 高声喧哗、娱乐、追逐打闹、滋事斗殴；&#10;（六） 在车站出入口逗留、阻塞行人通道；&#10;（七） 其它违反公共场所管理规定的行为。&#10;十、 严禁携带易燃、易爆、有毒、有放射性、腐蚀性等危险品和可能危及行车、人身安全的其它物品进站乘车；不得携带禽畜、宠物或易污损、无包装易碎、尖锐的物品。&#10;十一、 严禁攀爬、跨越或钻越围墙、围栏、闸机等。&#10;十二、 严禁跳下站台，进入轨道、区间及其它具有警示标志的区域。&#10;十三、 严禁在非紧急状态下动用紧急或安全装置；不得擅自操作有警示标志的按钮、开关装置。&#10;十四、 乘客应当正确使用车站内的自动扶梯等有关设施、设备；严禁损坏或擅自移动轨道交通设施。&#10;十五、 发生紧急情况时，乘客应保持冷静，听从轨道交通工作人员的指挥，不得擅自打开车门和强行下车。&#10;十六、 乘客应服从轨道交通工作人员的管理。发生纠纷时，可向轨道交通管理部门或上级行政主管部门反映，但不得影响轨道交通工作人员的管理和轨道交通的正常运行。" wrapText="true" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

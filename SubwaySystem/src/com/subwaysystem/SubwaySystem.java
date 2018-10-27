@@ -69,27 +69,7 @@ public class SubwaySystem {
     public String searchForStations(String line,String direction) throws SubwayException{
         ArrayList<Station> onLine;
         String result = null;
-        switch(line){
-            case "一号线": onLine = LINES.get(0);
-                break;
-            case "二号线": onLine = LINES.get(1);
-                break;
-            case "三号线": onLine = LINES.get(2);
-                break;
-            case "四号线": onLine = LINES.get(3);
-                break;
-            case "六号线": onLine = LINES.get(4);
-                break;
-            case "七号线": onLine = LINES.get(5);
-                break;
-            case "八号线": onLine = LINES.get(6);
-                break;
-            case "阳逻线": onLine = LINES.get(7);
-                break;
-            case "十一号线": onLine = LINES.get(8);
-                break;
-            default:throw new SubwayException("not Found");
-        }
+        onLine = getOneLine(line);
         if (onLine!=null){
             StringBuffer sb = new StringBuffer();
             if(direction.equals(onLine.get(onLine.size()-1).getName())){
@@ -107,6 +87,53 @@ public class SubwaySystem {
             }else throw new SubwayException("not Found");
         }
         return result;
+    }
+
+
+
+    public String[] getFinalStations(String line) throws SubwayException{
+        ArrayList<Station> oneLine;
+        oneLine = getOneLine(line);
+        String[] finals = new String[2];
+        finals[1] = oneLine.get(oneLine.size()-1).getName();
+        finals[2] = oneLine.get(0).getName();
+        return finals;
+    }
+
+    public ArrayList<Station> getOneLine(String name) throws SubwayException{
+        ArrayList<Station> oneLine;
+        switch(name) {
+            case "一号线":
+                oneLine = LINES.get(0);
+                break;
+            case "二号线":
+                oneLine = LINES.get(1);
+                break;
+            case "三号线":
+                oneLine = LINES.get(2);
+                break;
+            case "四号线":
+                oneLine = LINES.get(3);
+                break;
+            case "六号线":
+                oneLine = LINES.get(4);
+                break;
+            case "七号线":
+                oneLine = LINES.get(5);
+                break;
+            case "八号线":
+                oneLine = LINES.get(6);
+                break;
+            case "阳逻线":
+                oneLine = LINES.get(7);
+                break;
+            case "十一号线":
+                oneLine = LINES.get(8);
+                break;
+            default:
+                throw new SubwayException("not Found");
+        }
+        return oneLine;
     }
 
     /**

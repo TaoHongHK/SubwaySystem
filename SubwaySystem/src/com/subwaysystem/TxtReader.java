@@ -109,12 +109,9 @@ public class TxtReader {
     public static ArrayList<Edge> getEdges(){
         return EDGES;
     }
+
     public static ArrayList<ArrayList<Station>> getLINES(){
         return LINES;
-    }
-
-    public static void main(String[] args) {
-        read();
     }
 
 }
