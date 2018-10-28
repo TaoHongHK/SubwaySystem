@@ -5,40 +5,48 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="670.0" prefWidth="1199.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.view.PathWindowController">
+<AnchorPane prefHeight="672.0" prefWidth="1190.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ui.view.PathWindowController">
    <children>
-      <Label layoutX="378.0" layoutY="116.0" prefHeight="30.0" prefWidth="79.0" text="起点站：" textAlignment="CENTER">
+      <ImageView disable="true" fitHeight="671.0" fitWidth="1217.0" layoutX="-1.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../assets/ws_Traveling_Alone_1920x1080.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="378.0" layoutY="116.0" prefHeight="30.0" prefWidth="79.0" text="起点站：" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <ChoiceBox layoutX="451.0" layoutY="120.0" prefWidth="150.0" />
-      <ChoiceBox layoutX="618.0" layoutY="120.0" prefWidth="150.0" />
-      <Label layoutX="378.0" layoutY="197.0" prefHeight="30.0" prefWidth="79.0" text="终点站：" textAlignment="CENTER">
+      <ChoiceBox fx:id="choiceBox_1" layoutX="451.0" layoutY="120.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="choiceBox_2" layoutX="618.0" layoutY="120.0" prefWidth="150.0" />
+      <Label layoutX="378.0" layoutY="197.0" prefHeight="30.0" prefWidth="79.0" text="终点站：" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <ChoiceBox layoutX="451.0" layoutY="201.0" prefWidth="150.0" />
-      <ChoiceBox layoutX="618.0" layoutY="201.0" prefWidth="150.0" />
-      <Label layoutX="378.0" layoutY="268.0" prefHeight="30.0" prefWidth="79.0" text="费用：" textAlignment="CENTER">
+      <ChoiceBox fx:id="choiceBox_3" layoutX="451.0" layoutY="201.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="choiceBox_4" layoutX="618.0" layoutY="201.0" prefWidth="150.0" />
+      <Label layoutX="378.0" layoutY="268.0" prefHeight="30.0" prefWidth="79.0" text="费用：" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <RadioButton layoutX="480.0" layoutY="275.0" mnemonicParsing="false" selected="true" text="普通单程票" />
-      <RadioButton layoutX="590.0" layoutY="275.0" mnemonicParsing="false" text="武汉一卡通" />
-      <RadioButton layoutX="693.0" layoutY="275.0" mnemonicParsing="false" text="日票" />
-      <TextArea layoutX="375.0" layoutY="363.0" prefHeight="200.0" prefWidth="430.0" />
-      <Label layoutX="378.0" layoutY="331.0" prefHeight="30.0" prefWidth="79.0" text="结果：" textAlignment="CENTER">
+      <RadioButton fx:id="radioButton_1" layoutX="480.0" layoutY="275.0" mnemonicParsing="false" selected="true" text="普通单程票" textFill="WHITE" />
+      <RadioButton fx:id="radioButton_2" layoutX="590.0" layoutY="275.0" mnemonicParsing="false" text="武汉一卡通" textFill="WHITE" />
+      <RadioButton fx:id="radioButton_3" layoutX="693.0" layoutY="275.0" mnemonicParsing="false" text="日票" textFill="WHITE" />
+      <TextArea fx:id="textArea" editable="false" layoutX="375.0" layoutY="363.0" prefHeight="200.0" prefWidth="430.0" wrapText="true" />
+      <Label layoutX="378.0" layoutY="331.0" prefHeight="30.0" prefWidth="79.0" text="结果：" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Button fx:id="buyButton" layoutX="430.0" layoutY="582.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="买票" />
+      <Button fx:id="buyButton" layoutX="430.0" layoutY="582.0" mnemonicParsing="false" onAction="#handleBuyButton" prefHeight="30.0" prefWidth="100.0" text="买票" />
       <Button fx:id="backButtom" layoutX="649.0" layoutY="582.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="30.0" prefWidth="100.0" text="返回" />
+      <Label layoutX="418.0" layoutY="338.0" text="（注）本网页提供的路径和票价均为最短路径情况" textFill="WHITE" />
    </children>
 </AnchorPane>

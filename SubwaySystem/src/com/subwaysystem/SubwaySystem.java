@@ -7,6 +7,7 @@ public class SubwaySystem {
     private final ArrayList<Edge> EDGES;
     private static final String TYPE_WUHANTONG = "武汉通";
     private static final String TYPE_RIPIAO = "日票";
+    private static final String TYPE_PUTONG = "普通";
 
     public SubwaySystem(){
         TxtReader.read();
@@ -89,17 +90,42 @@ public class SubwaySystem {
         return result;
     }
 
-
-
+    /**
+     * 获得每条线两个终点站的名字
+     * @param line
+     * @return
+     * @throws SubwayException
+     */
     public String[] getFinalStations(String line) throws SubwayException{
         ArrayList<Station> oneLine;
         oneLine = getOneLine(line);
         String[] finals = new String[2];
-        finals[1] = oneLine.get(oneLine.size()-1).getName();
-        finals[2] = oneLine.get(0).getName();
+        finals[0] = oneLine.get(oneLine.size()-1).getName();
+        finals[1] = oneLine.get(0).getName();
         return finals;
     }
 
+    /**
+     * 输入一条线的名字，返回该线所有的站
+     * @param line
+     * @return
+     * @throws SubwayException
+     */
+    public String[] getOneLineAllStations(String line) throws SubwayException{
+        ArrayList<Station> oneLine = getOneLine(line);
+        ArrayList<String> names = new ArrayList<>();
+        for (Station station : oneLine){
+            names.add(station.getName());
+        }
+        return names.toArray(new String[0]);
+    }
+
+    /**
+     * 输入一个站的名字，返回该站队列
+     * @param name
+     * @return
+     * @throws SubwayException
+     */
     public ArrayList<Station> getOneLine(String name) throws SubwayException{
         ArrayList<Station> oneLine;
         switch(name) {
@@ -309,7 +335,6 @@ public class SubwaySystem {
         double distance = 0.0;
         for (Edge edge : EDGES){
             for (int i = 0;i<path.size()-1;i++){
-
                 if (path.get(i).getNumber()==edge.either()
                         &&path.get(i+1).getNumber()==edge.other(edge.either())){
                     distance+=edge.getWeight();
@@ -326,6 +351,12 @@ public class SubwaySystem {
         return result;
     }
 
+    /**
+     * 通过递归计算费用
+     * @param distance
+     * @param n
+     * @return
+     */
     public int getMoney(double distance,int n){
         if(distance-n<=0){
             return (n+1)/2;
@@ -343,6 +374,8 @@ public class SubwaySystem {
             result = 0.0;
         }else if(type.equals(TYPE_WUHANTONG)){
             result = normalCost(path)*0.9;
+        }else if (type.equals(TYPE_PUTONG)){
+            result = normalCost(path);
         }
         return result;
     }

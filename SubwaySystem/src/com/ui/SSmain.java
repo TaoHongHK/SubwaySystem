@@ -60,8 +60,8 @@ public class SSmain extends Application {
             loader.setLocation(SSmain.class.getResource("view/linesWindow.fxml"));
             AnchorPane linesWindow = (AnchorPane) loader.load();
             LinesWindowController linesWindowController = loader.getController();
-            linesWindowController.setSubwaySystem(this.subwaySystem);
-            linesWindowController.setsSmain(this);
+            linesWindowController.setsSmainAndSS(this);
+            linesWindowController.myinitialize();
             rootLayout.setCenter(linesWindow);
         } catch (IOException e) {
             e.printStackTrace();
@@ -74,7 +74,8 @@ public class SSmain extends Application {
             loader.setLocation(SSmain.class.getResource("view/pathWindow.fxml"));
             AnchorPane pathWindow = (AnchorPane) loader.load();
             PathWindowController pathWindowController = loader.getController();
-            pathWindowController.setsSmain(this);
+            pathWindowController.setsSmainAndSS(this);
+            pathWindowController.myinitialize();
             rootLayout.setCenter(pathWindow);
         } catch (IOException e) {
             e.printStackTrace();
@@ -83,6 +84,10 @@ public class SSmain extends Application {
 
     public Stage getPrimaryStage() {
         return primaryStage;
+    }
+
+    public SubwaySystem getSubwaySystem() {
+        return subwaySystem;
     }
 
     public static void main(String[] args) {
