@@ -24,3 +24,13 @@
 
 ### 10.27
 UI制作
+
+### 10.28
+**大功告成**
+
+## 成果
+
+![图一](https://upload-images.jianshu.io/upload_images/13484241-7e2510627e564b76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![图二](https://upload-images.jianshu.io/upload_images/13484241-f5b46589d7c73cfa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![图三](https://upload-images.jianshu.io/upload_images/13484241-2fb3604a5cd2bf4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![图四](https://upload-images.jianshu.io/upload_images/13484241-e8146d64aab387cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
