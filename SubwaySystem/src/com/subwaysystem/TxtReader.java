@@ -11,7 +11,7 @@ public class TxtReader {
     private static final String FILE_PATH =
             ".\\src\\com\\assets\\subway.txt";
     private static final String PATTERN_STRING_STATION =
-            "(\\W+)---(\\W+)\t([0-9]*\\.[0-9]+)";
+            "(\\W+)---(\\W+)\t([0-9]*\\.[0-9])";
     private static final String PATTERN_STRING_LINE =
             "(([0-9]\\W*站点)|(阳逻线站点))间距站点名称\t间距（KM）";
     private static ArrayList<ArrayList<Station>> LINES  = new ArrayList<>();
@@ -20,8 +20,8 @@ public class TxtReader {
     private static int count = 0;
 
     public static void read(){
-        File file = new File(FILE_PATH);
         try {
+            File file = new File(FILE_PATH);
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String tmp = null;
             String[] LINES_string;
@@ -57,10 +57,10 @@ public class TxtReader {
                 String name1 = matcher.group(1);
                 String name2 = matcher.group(2);
                 double distance = Double.parseDouble(matcher.group(3));
-                addToOneLine(name1,oneLine);
-                addToOneLine(name2,oneLine);
-                Edge oneEdge = new Edge(allStations.get(name1),allStations.get(name2),distance);
-                if(!isInEdges(oneEdge)){
+                addToOneLine(name1, oneLine);
+                addToOneLine(name2, oneLine);
+                Edge oneEdge = new Edge(allStations.get(name1), allStations.get(name2), distance);
+                if (!isInEdges(oneEdge)) {
                     EDGES.add(oneEdge);
                 }
             }
